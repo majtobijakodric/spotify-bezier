@@ -1,0 +1,45 @@
+@import url(./fonts.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: mixUIRegular;
+    fill: #fff;
+}
+
+h1 {
+    font-family: mixUITiltle;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.spotify-svg {
+    width: 600px;
+    height: 600px;
+}
+
+.spotify-path {
+    transition: transform 2s, fill 5s, stroke-width 3s, stroke 3s;
+}
+
+
+/* .spotify-path:hover {
+    transform: rotate(20deg);
+    fill: beige;
+    stroke-width: 100;
+    stroke: blueviolet;
+} */
+
+.spotify-path:active {
+     transform: skew(15deg);
+    fill: beige;
+    stroke-width: 100;
+    stroke: blueviolet;
+}

@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+              "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spotify Logo</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="shortcut icon" href="assets/spotify.svg" type="image/x-icon">
-
-</head>
-
-<body>
-
-    <header>
-
-        <h1>SPOTIFY LOGOS</h1>
-    </header>
-
-    <p>PNG image</p>
-    <img src="./assets/Spotify.png" alt="spotify logo" width="600px" height="600px">
-
-    <p>SVG image</p>
-    <!-- <img src="./assets/spotify.svg" alt="spotify logo" width="600px" height="600px"> -->
-
-
-    <svg class="spotify-svg" xmlns="http://www.w3.org/2000/svg" width="500cm" height="500cm" viewBox="0 0 4096 4096">
-        <path class="spotify-path" id="Selection" fill="black" stroke="black" stroke-width="1" d="M 1998.00,768.14
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1444.8mm" height="1444.8mm"
+     viewBox="0 0 4096 4096">
+  <path id="Selection"
+        fill="black" stroke="black" stroke-width="1"
+        d="M 1998.00,768.14
            C 1998.00,768.14 2036.00,768.14 2036.00,768.14
              2036.00,768.14 2090.00,768.14 2090.00,768.14
              2090.00,768.14 2105.00,769.00 2105.00,769.00
@@ -243,10 +225,4 @@
              1919.00,2305.00 1903.00,2304.00 1903.00,2304.00
              1903.00,2304.00 1866.00,2304.00 1866.00,2304.00
              1856.84,2303.89 1856.63,2302.17 1844.72,2303.44 Z" />
-    </svg>
-
-
-
-</body>
-
-</html>
+</svg>
