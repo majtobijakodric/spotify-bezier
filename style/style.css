@@ -7,8 +7,18 @@
     fill: #fff;
 }
 
+header {
+    margin-top: 25px;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: cetnter;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.631);
+}
+
 h1 {
     font-family: mixUITiltle;
+    text-align: center;
 }
 
 body {
@@ -18,6 +28,26 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-y: auto;
+}
+
+#examples {}
+
+.example-box {
+    height: 400px;
+    width: 600px;
+    border: 2px solid rgb(219, 173, 173);
+    border-radius: 10px ;
+}
+
+
+.span-hover {
+    display: inline-block;
+    transition: transform 0.1s ease, color 0.1s;
+}
+
+.span-hover:hover {
+    transform: scale(1.2) skew(3deg);
+    color: #1ED760;
 }
 
 .spotify-svg {
@@ -38,7 +68,7 @@ body {
 } */
 
 .spotify-path:active {
-     transform: skew(15deg);
+    transform: skew(15deg);
     fill: beige;
     stroke-width: 100;
     stroke: blueviolet;
