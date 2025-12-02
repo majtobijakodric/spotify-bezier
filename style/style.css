@@ -1,5 +1,30 @@
 @import url(./fonts.css);
 
+:root {
+    --shadow-color: 0deg 0% 1%;
+    --shadow-elevation-low:
+        0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
+        0.5px 1px 1.7px hsl(var(--shadow-color) / 0.22),
+        1px 1.9px 3.2px hsl(var(--shadow-color) / 0.43);
+    --shadow-elevation-medium:
+        0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
+        1px 1.9px 3.2px hsl(var(--shadow-color) / 0.11),
+        1.7px 3.4px 5.7px hsl(var(--shadow-color) / 0.22),
+        2.8px 5.7px 9.5px hsl(var(--shadow-color) / 0.33),
+        4.9px 9.7px 16.3px hsl(var(--shadow-color) / 0.43);
+    --shadow-elevation-high:
+        0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
+        2px 4px 6.7px hsl(var(--shadow-color) / 0.05),
+        3.5px 7px 11.7px hsl(var(--shadow-color) / 0.1),
+        5px 10px 16.8px hsl(var(--shadow-color) / 0.15),
+        6.6px 13.2px 22.1px hsl(var(--shadow-color) / 0.2),
+        8.5px 17.1px 28.6px hsl(var(--shadow-color) / 0.25),
+        11px 22px 36.9px hsl(var(--shadow-color) / 0.3),
+        14.2px 28.4px 47.6px hsl(var(--shadow-color) / 0.35),
+        18.3px 36.6px 61.4px hsl(var(--shadow-color) / 0.4),
+        23.5px 47px 78.8px hsl(var(--shadow-color) / 0.45);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -12,7 +37,7 @@ header {
     width: 100%;
     height: 70px;
     justify-content: center;
-    align-items: cetnter;
+    align-items: center;
     border-bottom: 1px solid rgba(250, 250, 250, 0.631);
 }
 
@@ -26,50 +51,47 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow-y: auto;
 }
 
-#examples {}
+#examples {
+    margin: 5% 2%;
+    padding: 2%;
+}
 
 .example-box {
-    height: 400px;
-    width: 600px;
-    border: 2px solid rgb(219, 173, 173);
-    border-radius: 10px ;
+    height: 500px;
+    width: 500px;
+    border: 1px solid rgb(219, 173, 173);
+    box-shadow: var(--shadow-elevation-medium);
+    border-radius: 10px;
+    background-color: #383737ad;
+    overflow: none;
 }
 
-
+/* Title */
 .span-hover {
     display: inline-block;
     transition: transform 0.1s ease, color 0.1s;
 }
 
 .span-hover:hover {
-    transform: scale(1.2) skew(3deg);
+    transform: scale(1.2) skew(3deg) rotate(700deg);
     color: #1ED760;
 }
 
 .spotify-svg {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
 }
 
 .spotify-path {
-    transition: transform 2s, fill 5s, stroke-width 3s, stroke 3s;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out, fill 1s ease, stroke-width 2s ease, stroke 3s ease-in-out;
 }
 
-
-/* .spotify-path:hover {
-    transform: rotate(20deg);
-    fill: beige;
-    stroke-width: 100;
-    stroke: blueviolet;
-} */
-
 .spotify-path:active {
-    transform: skew(15deg);
-    fill: beige;
-    stroke-width: 100;
-    stroke: blueviolet;
+    transform: scale(1.1);
+    fill: #1ED760;
+    stroke-width: 6;
+    stroke: black;
 }
