@@ -7,6 +7,12 @@
     <title>Spotify Logo</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="icon" href="https://www.scdn.co/i/_global/favicon.png">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -24,20 +30,55 @@
     </header>
 
     <div id="examples">
+        <p>PNG image</p>
+        <div class="example-box">
+            <div class="description">
+                <!-- svg description -->
+                <p>
+                    PNG is a raster snapshot of the Spotify mark. The panel on the right
+                    (`.example-box-svg`) simply embeds the exported image so you can compare it
+                    to the fully vector version below. Because the bitmap is static, zooming in
+                    eventually reveals pixels and no CSS transitions are applied to it.
+                </p>
 
-        <div class="example-boax">
-            <p>PNG image</p>
-            <div class="example-box">
+                <!-- css code -->
+                <pre>
+<code class="language-css code-width">
+    .spotify-path {
+        transform-origin: center;
+        transition: 
+        transform 0.3s ease-in-out,
+        fill 0.5s ease-in-out,
+        stroke-width 2s ease,
+        stroke 1s ease-in-out;
+    }
+
+    .spotify-path:active {
+        transform: scale(1.1);
+        fill: #1ED760;
+        stroke-width: 5;
+        stroke: black;
+    }
+</code>
+</pre>
+            </div>
+            <div class="example-box-svg">
                 <img src="./assets/Spotify.png" alt="spotify logo" width="100%" height="100%">
             </div>
         </div>
 
-        <p>SVG image</p>
         <div class="example-box">
-            <svg class="spotify-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                viewBox="0 0 4096 4096">
+            <div class="description">
+                <h2>SVG image</h2>
+                <p>
+             
+                </p>
+            </div>
+            <div class="example-box-svg">
+                <svg class="spotify-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                    viewBox="0 0 4096 4096">
 
-                <path class="spotify-path" id="Selection" fill="black" stroke="black" stroke-width="1" d="M 1998.00,768.14
+                    <path class="spotify-path" id="Selection" fill="black" stroke="black" stroke-width="1" d="M 1998.00,768.14
            C 1998.00,768.14 2036.00,768.14 2036.00,768.14
              2036.00,768.14 2090.00,768.14 2090.00,768.14
              2090.00,768.14 2105.00,769.00 2105.00,769.00
@@ -255,7 +296,8 @@
              1919.00,2305.00 1903.00,2304.00 1903.00,2304.00
              1903.00,2304.00 1866.00,2304.00 1866.00,2304.00
              1856.84,2303.89 1856.63,2302.17 1844.72,2303.44 Z" />
-            </svg>
+                </svg>
+            </div>
         </div>
     </div>
 

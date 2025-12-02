@@ -30,6 +30,7 @@
     margin: 0;
     font-family: mixUIRegular;
     fill: #fff;
+    box-sizing: border-box;
 }
 
 header {
@@ -47,11 +48,14 @@ h1 {
 }
 
 body {
-    background-color: #121212;
+    background-color: #292828;
     color: white;
     display: flex;
     flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+
 }
+
 
 #examples {
     margin: 5% 2%;
@@ -59,13 +63,35 @@ body {
 }
 
 .example-box {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    height: 520px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.example-box-svg {
     height: 500px;
     width: 500px;
-    border: 1px solid rgb(219, 173, 173);
+    border: 1px solid rgba(0, 0, 0, 0.267);
     box-shadow: var(--shadow-elevation-medium);
     border-radius: 10px;
-    background-color: #383737ad;
+    background-color: #383737;
     overflow: none;
+    margin-left: auto;
+}
+
+.description {
+    flex: 1;
+    text-wrap: pretty;
+}
+
+.code-width {
+    max-width: 30%;
+    box-shadow: var(--shadow-elevation-medium);
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
 /* Title */
@@ -79,6 +105,8 @@ body {
     color: #1ED760;
 }
 
+/* End title */
+
 .spotify-svg {
     width: 100%;
     height: 100%;
@@ -86,12 +114,12 @@ body {
 
 .spotify-path {
     transform-origin: center;
-    transition: transform 0.3s ease-in-out, fill 1s ease, stroke-width 2s ease, stroke 3s ease-in-out;
+    transition: transform 0.3s ease-in-out, fill 0.5s ease-in-out, stroke-width 2s ease, stroke 1s ease-in-out;
 }
 
 .spotify-path:active {
     transform: scale(1.1);
     fill: #1ED760;
-    stroke-width: 6;
+    stroke-width: 5;
     stroke: black;
 }
