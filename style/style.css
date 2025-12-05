@@ -1,137 +1,139 @@
-@import url(./fonts.css);
+ @import url(./fonts.css);
 
-:root {
-    --shadow-color: 0deg 0% 1%;
-    --shadow-elevation-low:
-        0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
-        0.5px 1px 1.7px hsl(var(--shadow-color) / 0.22),
-        1px 1.9px 3.2px hsl(var(--shadow-color) / 0.43);
-    --shadow-elevation-medium:
-        0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
-        1px 1.9px 3.2px hsl(var(--shadow-color) / 0.11),
-        1.7px 3.4px 5.7px hsl(var(--shadow-color) / 0.22),
-        2.8px 5.7px 9.5px hsl(var(--shadow-color) / 0.33),
-        4.9px 9.7px 16.3px hsl(var(--shadow-color) / 0.43);
-    --shadow-elevation-high:
-        0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
-        2px 4px 6.7px hsl(var(--shadow-color) / 0.05),
-        3.5px 7px 11.7px hsl(var(--shadow-color) / 0.1),
-        5px 10px 16.8px hsl(var(--shadow-color) / 0.15),
-        6.6px 13.2px 22.1px hsl(var(--shadow-color) / 0.2),
-        8.5px 17.1px 28.6px hsl(var(--shadow-color) / 0.25),
-        11px 22px 36.9px hsl(var(--shadow-color) / 0.3),
-        14.2px 28.4px 47.6px hsl(var(--shadow-color) / 0.35),
-        18.3px 36.6px 61.4px hsl(var(--shadow-color) / 0.4),
-        23.5px 47px 78.8px hsl(var(--shadow-color) / 0.45);
-}
+ :root {
+     --panel-gap: 2rem;
+     --shadow-color: 0deg 0% 1%;
+     --shadow-elevation-low:
+         0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
+         0.5px 1px 1.7px hsl(var(--shadow-color) / 0.22),
+         1px 1.9px 3.2px hsl(var(--shadow-color) / 0.43);
+     --shadow-elevation-medium:
+         0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
+         1px 1.9px 3.2px hsl(var(--shadow-color) / 0.11),
+         1.7px 3.4px 5.7px hsl(var(--shadow-color) / 0.22),
+         2.8px 5.7px 9.5px hsl(var(--shadow-color) / 0.33),
+         4.9px 9.7px 16.3px hsl(var(--shadow-color) / 0.43);
+     --shadow-elevation-high:
+         0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
+         2px 4px 6.7px hsl(var(--shadow-color) / 0.05),
+         3.5px 7px 11.7px hsl(var(--shadow-color) / 0.1),
+         5px 10px 16.8px hsl(var(--shadow-color) / 0.15),
+         6.6px 13.2px 22.1px hsl(var(--shadow-color) / 0.2),
+         8.5px 17.1px 28.6px hsl(var(--shadow-color) / 0.25),
+         11px 22px 36.9px hsl(var(--shadow-color) / 0.3),
+         14.2px 28.4px 47.6px hsl(var(--shadow-color) / 0.35),
+         18.3px 36.6px 61.4px hsl(var(--shadow-color) / 0.4),
+         23.5px 47px 78.8px hsl(var(--shadow-color) / 0.45);
+ }
 
-* {
-    padding: 0;
-    margin: 0;
-    font-family: mixUIRegular;
-    fill: #fff;
-    box-sizing: border-box;
-}
-
-header {
-    margin-top: 25px;
-    width: 100%;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.631);
-}
-
-h1 {
-    font-family: mixUITiltle;
-    text-align: center;
-}
+ * {
+     padding: 0;
+     margin: 0;
+     font-family: mixUIRegular;
+     fill: #fff;
+     box-sizing: border-box;
+ }
 
 body {
+    margin: 0;
+    min-height: 100vh;
     background-color: #292828;
-    color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+    color: white;
     -webkit-font-smoothing: antialiased;
 }
 
-pre {
-    width: 300px;
-    height: 100%;
-    margin: 0;
-}
-
-pre code {
-    display: block;
+header {
     width: 100%;
-    height: 100%;
-}
-
-#examples {
-    margin: 5% 2%;
-    padding: 2%;
-}
-
-.example-box {
     display: flex;
-    gap: 1.5rem;
-    width: 100%;
-    margin-top: 10px;
-    height: 400px;
+    justify-content: center;
+    text-align: center;
 }
 
-.example-box-svg {
-    height: 400px;
-    width: 400px;
-    border: 1px solid rgba(0, 0, 0, 0.267);
-    box-shadow: var(--shadow-elevation-medium);
-    border-radius: 10px;
-    background-color: #383737;
-    overflow: none;
-    margin-left: auto;
+ .shadow {
+     box-shadow: var(--shadow-elevation-medium);
+ }
+
+ .frame {
+     width: 100%;
+     max-width: 1400px;
+     margin: 0 auto;
+    background-color: #292828;
+
+     border-radius: 28px;
+     padding: 2.5rem;
+     backdrop-filter: blur(8px);
+
+ }
+
+ .panel-stack {
+     display: flex;
+     gap: var(--panel-gap);
+     align-items: stretch;
+
+ }
+
+ .panel-stack>div {
+     border-radius: 20px;
+     padding: 1.75rem;
+     color: #fff;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     transition: transform 220ms ease;
+ }
+
+ .panel-primary,
+ .panel-secondary {
+     flex: 1;
+     min-height: 400px;
+ }
+
+ .panel-primary {
+    text-align: center;
+    justify-content: center;
 }
 
-.description {
-    flex: 1;
-    text-wrap: pretty;
-    padding: 2%;
-    max-width: 300px;
-}
+ .panel-secondary {
+     background: linear-gradient(145deg, #64d6ee, #3b82f6);
+ }
 
-.code-width {
-    display: block;
-    width: 100%;
-    box-shadow: var(--shadow-elevation-medium);
-    margin: 0;
-    border-radius: 10px;
-}
+ .panel-right {
+     width: 400px;
+     min-width: 400px;
+     height: 400px;
+     background-color: #383737;
 
-/* Title */
-.span-hover {
-    display: inline-block;
-    transition: transform 0.1s ease, color 0.1s;
-}
+     border: 1px solid rgba(0, 0, 0, 0.267);
 
-.span-hover:hover {
-    transform: scale(1.2) skew(3deg) rotate(700deg);
-    color: #1ED760;
-}
+ }
 
-/* End title */
+ h2 {
+     margin: 0 0 0.5rem;
+     font-size: 1.4rem;
+ }
 
-.spotify-svg {
-    width: 100%;
-    height: 100%;
-}
+ p {
+     margin: 0;
+     font-size: 1rem;
+     line-height: 1.5;
+ }
 
-.spotify-path {
-    transform-origin: center;
-    transition: transform 0.3s ease-in-out, fill 0.5s ease-in-out, stroke-width 2s ease, stroke 1s ease-in-out;
-}
+ @media (max-width: 1100px) {
+     .panel-stack {
+         flex-direction: column;
+     }
 
-.spotify-path:active {
-    transform: scale(1.1);
-    fill: #1ED760;
-    stroke-width: 5;
-    stroke: black;
-}
+     .panel-right {
+         width: 100%;
+         min-width: 0;
+         height: 400px;
+     }
+ }
+
+

@@ -2,47 +2,57 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spotify Logos</title>
+    <title>Spotify Logo</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="icon" href="https://www.scdn.co/i/_global/favicon.png">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animations.css">
-
+    <link rel="stylesheet" href="style/animations.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
-    <header>
-        <h1>
-            <!-- SPOTIFY -->
-            <span class="span-hover">S</span><span class="span-hover">P</span><span class="span-hover">O</span><span
-                class="span-hover">T</span><span class="span-hover">I</span><span class="span-hover">F</span><span
-                class="span-hover">Y</span>
-            <!-- LOGOS -->
-            <span class="span-hover">L</span><span class="span-hover">O</span><span class="span-hover">G</span><span
-                class="span-hover">O</span><span class="span-hover">S</span>
-        </h1>
-    </header>
 
-    <main class="frame">
-        <h2>SVG</h2>
-        <section class="panel-stack">
-            <div class="panel-primary">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+    
+
+    <div id="examples">
+        <h2>PNG image</h2>
+        <div class="example-box">
+            <div class="description">
+                <!-- svg description -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.
                 </p>
             </div>
-            <div class="panel-secondary shadow">
+            <div>
+                <!-- css code -->
                 <pre>
+<code class="language-css code-width">
+ no code
+</code>
+</pre>
+            </div>
 
+            <div class="example-box-svg">
+                <img src="./assets/Spotify.png" alt="spotify logo" width="100%" height="100%">
+            </div>
+        </div>
 
-                <code class="language-css code-width">
+        <h2>SVG image</h2>
+        <div class="example-box">
+            <div class="description">
+                <p>
+
+                </p>
+            </div>
+            <div>
+                <pre>
+<code class="language-css code-width">
     .spotify-path {
         transform-origin: center;
         transition: 
@@ -59,10 +69,9 @@
         stroke: black;
     }
 </code>
-                </pre>
-
+</pre>
             </div>
-            <div class="panel-right shadow">
+            <div class="example-box-svg">
                 <svg class="spotify-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
                     viewBox="0 0 4096 4096">
 
@@ -286,11 +295,11 @@
              1856.84,2303.89 1856.63,2302.17 1844.72,2303.44 Z" />
                 </svg>
             </div>
-        </section>
+        </div>
+    </div>
 
 
 
-    </main>
 
 
 </body>
