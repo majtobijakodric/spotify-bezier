@@ -44,7 +44,6 @@ body {
     justify-content: flex-start;
     gap: 2rem;
     padding: 3rem 1.5rem;
-    color: white;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -64,18 +63,22 @@ header {
     max-width: 1400px;
     margin: 0 auto;
     background-color: #292828;
-
     border-radius: 28px;
     padding: 2.5rem;
     backdrop-filter: blur(8px);
+}
 
+.original-box-shadow {
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.298), 10px 10px 0px 0px rgba(0, 0, 0, 0.216), 15px 15px 0px 0px rgba(0, 0, 0, 0.2), 20px 20px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
 .panel-stack {
     display: flex;
     gap: var(--panel-gap);
     align-items: stretch;
-
+    background-color: #3b3939;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .panel-stack>div {
