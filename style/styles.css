@@ -920,6 +920,7 @@ ol {
 
 /* Large screens */
 @media (max-width: 1400px) {
+
     .comparison-row,
     .example-row {
         grid-template-columns: 1fr 1fr 350px;
@@ -933,6 +934,7 @@ ol {
 
 /* Tablet and smaller */
 @media (max-width: 1100px) {
+
     .comparison-row,
     .example-row {
         grid-template-columns: 1fr 1fr;
