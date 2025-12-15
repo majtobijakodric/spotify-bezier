@@ -214,10 +214,11 @@ ol {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: var(--footer-max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--spacing-xl);
     height: var(--navbar-height);
+    position: relative;
 }
 
 .navbar__left {
@@ -231,6 +232,7 @@ ol {
     align-items: center;
     gap: var(--spacing-xs);
     transition: opacity var(--transition-normal);
+    flex-shrink: 0;
 }
 
 .navbar__logo:hover {
@@ -238,13 +240,18 @@ ol {
 }
 
 .navbar__logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.navbar__logo-icon path {
+    fill: var(--color-spotify-green) !important;
 }
 
 .navbar__logo-text {
     font-family: var(--font-family-bold);
-    font-size: var(--font-size-lg);
+    font-size: 18px;
     font-weight: 700;
     color: var(--color-white);
 }
@@ -258,7 +265,7 @@ ol {
 .navbar__link {
     color: var(--color-white);
     font-family: var(--font-family-bold);
-    font-size: var(--font-size-sm);
+    font-size: 15px;
     font-weight: 600;
     transition: color var(--transition-normal);
 }
@@ -270,11 +277,21 @@ ol {
 .navbar__link--icon {
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: var(--color-white);
+}
+
+.navbar__link--icon:hover {
+    color: var(--color-spotify-green);
 }
 
 .navbar__icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: block;
+    fill: white;
 }
 
 .navbar__right {
@@ -300,7 +317,10 @@ ol {
 .navbar__btn--login {
     background-color: var(--color-spotify-green);
     color: var(--color-black);
-    height: 40px;
+    height: 44px;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: var(--radius-pill);
 }
 
 .navbar__btn--login:hover {
@@ -774,19 +794,21 @@ ol {
 }
 
 .footer__container {
-    max-width: var(--footer-max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--spacing-xl);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: var(--spacing-2xl);
-    align-items: start;
+    position: relative;
 }
 
 .footer__logo {
     display: flex;
     align-items: center;
     transition: opacity var(--transition-normal);
+    flex-shrink: 0;
 }
 
 .footer__logo:hover {
@@ -796,12 +818,15 @@ ol {
 .footer__logo-icon {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
 }
 
 .footer__columns {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-lg);
+    gap: 60px;
+    flex: 1;
+    max-width: 700px;
 }
 
 .footer__column-title {
@@ -834,6 +859,7 @@ ol {
 .footer__social {
     display: flex;
     gap: var(--spacing-md);
+    flex-shrink: 0;
 }
 
 .footer__social-link {
@@ -868,6 +894,9 @@ ol {
 }
 
 .footer__container--lower {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--spacing-xl);
     display: flex;
     align-items: center;
     justify-content: space-between;
