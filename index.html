@@ -53,11 +53,9 @@
         <!-- Animations Showcase Section -->
         <section class="animations-section" aria-labelledby="animations-heading">
             <div class="animations-container">
-                <h1 id="animations-heading" class="animations-section__title">Animations</h1>
 
-                <!-- Rendering Methods Comparison Row -->
                 <div class="comparison-row">
-                    <!-- Box 1: PNG -->
+                    <!-- PNG -->
                     <div class="comparison-box">
                         <span class="comparison-box__label">PNG</span>
                         <div class="comparison-box__content">
@@ -65,7 +63,7 @@
                         </div>
                     </div>
 
-                    <!-- Box 2: SVG -->
+                    <!-- SVG -->
                     <div class="comparison-box">
                         <span class="comparison-box__label">SVG</span>
                         <div class="comparison-box__content">
@@ -76,7 +74,7 @@
                         </div>
                     </div>
 
-                    <!-- Box 3: Canvas -->
+                    <!-- Canvas -->
                     <div class="comparison-box">
                         <span class="comparison-box__label">Canvas</span>
                         <div class="comparison-box__content">
@@ -84,17 +82,15 @@
                         </div>
                     </div>
                 </div>
+                <h1 id="animations-heading" class="animations-section__title">Animations</h1>
 
-                <!-- Example 4: Gradient Sweep Shimmer -->
+                <!-- 1) Example -->
                 <div class="example-row" data-example="4">
                     <div class="example-panel example-panel--info">
-                        <h2 class="example-panel__title">4) Gradient sweep shimmer</h2>
-                        <p class="example-panel__description">Inline SVG filled with an animated linear gradient that
-                            creates a "shimmer" sweep effect across the logo.</p>
-                        <ul class="example-panel__list">
-                            <li><strong>Pros:</strong> Eye-catching, modern effect</li>
-                            <li><strong>Cons:</strong> Requires JS for gradient animation</li>
-                        </ul>
+                        <h2 class="example-panel__title">1)</h2>
+                        <p class="example-panel__description">description</p>
+                            
+                   
                     </div>
                     <div class="example-panel example-panel--code">
                         <div class="code-tabs">
@@ -102,193 +98,19 @@
                             <button class="code-tab" data-tab="js">JavaScript</button>
                         </div>
                         <div class="code-content">
-                            <pre class="code-block code-block--active" data-lang="html"><code>&lt;svg viewBox="0 0 48 48"&gt;
-  &lt;defs&gt;
-    &lt;linearGradient id="shimmer-grad"&gt;
-      &lt;stop offset="0%" stop-color="#fff"/&gt;
-      &lt;stop offset="50%" stop-color="#1ED760"/&gt;
-      &lt;stop offset="100%" stop-color="#fff"/&gt;
-    &lt;/linearGradient&gt;
-  &lt;/defs&gt;
-  &lt;path fill="url(#shimmer-grad)" .../&gt;
-&lt;/svg&gt;</code></pre>
-                            <pre class="code-block" data-lang="js"><code>function animateShimmer() {
-  const grad = document.getElementById('shimmer-grad');
-  let offset = -100;
-  function step() {
-    offset = (offset + 1) % 200 - 100;
-    grad.setAttribute('gradientTransform', 
-      `translate(${offset / 100}, 0)`);
-    requestAnimationFrame(step);
-  }
-  step();
-}</code></pre>
+                            <pre class="code-block code-block--active" data-lang="html"><code>dasdsadasdadsad</code></pre>
+                            <pre class="code-block" data-lang="js"><code>dasdada</code></pre>
                         </div>
                     </div>
                     <div class="example-panel example-panel--preview">
                         <div class="preview-container" id="preview-4">
-                            <svg class="shimmer-logo" width="200" height="200" viewBox="0 0 48 48">
-                                <defs>
-                                    <linearGradient id="shimmer-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#ffffff" />
-                                        <stop offset="40%" stop-color="#ffffff" />
-                                        <stop offset="50%" stop-color="#1ED760" />
-                                        <stop offset="60%" stop-color="#ffffff" />
-                                        <stop offset="100%" stop-color="#ffffff" />
-                                    </linearGradient>
-                                </defs>
-                                <path fill="url(#shimmer-gradient)"
-                                    d="M38.16,21.36 C30.48,16.8 17.64,16.32 10.32,18.6 C9.12,18.96 7.92,18.24 7.56,17.16 C7.2,15.96 7.92,14.76 9,14.4 C17.52,11.88 31.56,12.36 40.44,17.64 C41.52,18.24 41.88,19.68 41.28,20.76 C40.68,21.6 39.24,21.96 38.16,21.36 M37.92,28.08 C37.32,28.92 36.24,29.28 35.4,28.68 C28.92,24.72 19.08,23.52 11.52,25.92 C10.56,26.16 9.48,25.68 9.24,24.72 C9,23.76 9.48,22.68 10.44,22.44 C19.2,19.8 30,21.12 37.44,25.68 C38.16,26.04 38.52,27.24 37.92,28.08 M35.04,34.68 C34.56,35.4 33.72,35.64 33,35.16 C27.36,31.68 20.28,30.96 11.88,32.88 C11.04,33.12 10.32,32.52 10.08,31.8 C9.84,30.96 10.44,30.24 11.16,30 C20.28,27.96 28.2,28.8 34.44,32.64 C35.28,33 35.4,33.96 35.04,34.68 M24,0 C10.8,0 0,10.8 0,24 C0,37.2 10.8,48 24,48 C37.2,48 48,37.2 48,24 C48,10.8 37.32,0 24,0" />
-                            </svg>
+                            <!-- <svg class="shimmer-logo" width="200" height="200" viewBox="0 0 48 48"></svg> -->
+                             <canvas id="circle" height="250px" width="250px"></canvas>
                         </div>
                     </div>
                 </div>
 
-                <!-- Example 5: Stroke-Draw Reveal -->
-                <div class="example-row" data-example="5">
-                    <div class="example-panel example-panel--info">
-                        <h2 class="example-panel__title">5) Stroke-draw reveal</h2>
-                        <p class="example-panel__description">SVG paths animated with stroke-dasharray and
-                            stroke-dashoffset to create a "drawing" effect over ~1.2 seconds.</p>
-                        <ul class="example-panel__list">
-                            <li><strong>Pros:</strong> Pure CSS animation, no JS required</li>
-                            <li><strong>Cons:</strong> Works best with stroke-based paths</li>
-                        </ul>
-                    </div>
-                    <div class="example-panel example-panel--code">
-                        <div class="code-tabs">
-                            <button class="code-tab code-tab--active" data-tab="html">HTML</button>
-                            <button class="code-tab" data-tab="css">CSS</button>
-                        </div>
-                        <div class="code-content">
-                            <pre class="code-block code-block--active" data-lang="html"><code>&lt;svg class="stroke-draw-logo" viewBox="0 0 48 48"&gt;
-  &lt;circle cx="24" cy="24" r="22" 
-          class="stroke-draw-circle"/&gt;
-  &lt;path class="stroke-draw-wave" d="..."/&gt;
-&lt;/svg&gt;</code></pre>
-                            <pre class="code-block" data-lang="css"><code>.stroke-draw-circle {
-  stroke: #fff;
-  stroke-width: 2;
-  fill: none;
-  stroke-dasharray: 140;
-  stroke-dashoffset: 140;
-  animation: draw 1.2s ease forwards;
-}
-@keyframes draw {
-  to { stroke-dashoffset: 0; }
-}</code></pre>
-                        </div>
-                    </div>
-                    <div class="example-panel example-panel--preview">
-                        <div class="preview-container" id="preview-5">
-                            <svg class="stroke-draw-logo" width="200" height="200" viewBox="0 0 48 48">
-                                <circle class="stroke-draw-circle" cx="24" cy="24" r="22" />
-                                <path class="stroke-draw-wave stroke-draw-wave--1"
-                                    d="M11.88,32.88 C20.28,30.96 27.36,31.68 33,35.16" />
-                                <path class="stroke-draw-wave stroke-draw-wave--2"
-                                    d="M11.52,25.92 C19.08,23.52 28.92,24.72 35.4,28.68" />
-                                <path class="stroke-draw-wave stroke-draw-wave--3"
-                                    d="M10.32,18.6 C17.64,16.32 30.48,16.8 38.16,21.36" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Example 6: Clip-Path Reveal Loop -->
-                <div class="example-row" data-example="6">
-                    <div class="example-panel example-panel--info">
-                        <h2 class="example-panel__title">6) Clip-path reveal loop</h2>
-                        <p class="example-panel__description">SVG logo revealed via an animated circular clip-path that
-                            expands from center, then loops smoothly.</p>
-                        <ul class="example-panel__list">
-                            <li><strong>Pros:</strong> Smooth, loopable, subtle effect</li>
-                            <li><strong>Cons:</strong> clip-path support varies in older browsers</li>
-                        </ul>
-                    </div>
-                    <div class="example-panel example-panel--code">
-                        <div class="code-tabs">
-                            <button class="code-tab code-tab--active" data-tab="html">HTML</button>
-                            <button class="code-tab" data-tab="css">CSS</button>
-                        </div>
-                        <div class="code-content">
-                            <pre class="code-block code-block--active" data-lang="html"><code>&lt;div class="clip-reveal-container"&gt;
-  &lt;svg class="clip-reveal-logo" viewBox="0 0 48 48"&gt;
-    &lt;path fill="#fff" d="..."/&gt;
-  &lt;/svg&gt;
-&lt;/div&gt;</code></pre>
-                            <pre class="code-block" data-lang="css"><code>.clip-reveal-container {
-  animation: clipReveal 2.5s ease-in-out infinite;
-}
-@keyframes clipReveal {
-  0% { clip-path: circle(0% at 50% 50%); }
-  50% { clip-path: circle(75% at 50% 50%); }
-  100% { clip-path: circle(0% at 50% 50%); }
-}</code></pre>
-                        </div>
-                    </div>
-                    <div class="example-panel example-panel--preview">
-                        <div class="preview-container" id="preview-6">
-                            <div class="clip-reveal-container">
-                                <svg class="clip-reveal-logo" width="200" height="200" viewBox="0 0 48 48">
-                                    <path fill="#fff"
-                                        d="M38.16,21.36 C30.48,16.8 17.64,16.32 10.32,18.6 C9.12,18.96 7.92,18.24 7.56,17.16 C7.2,15.96 7.92,14.76 9,14.4 C17.52,11.88 31.56,12.36 40.44,17.64 C41.52,18.24 41.88,19.68 41.28,20.76 C40.68,21.6 39.24,21.96 38.16,21.36 M37.92,28.08 C37.32,28.92 36.24,29.28 35.4,28.68 C28.92,24.72 19.08,23.52 11.52,25.92 C10.56,26.16 9.48,25.68 9.24,24.72 C9,23.76 9.48,22.68 10.44,22.44 C19.2,19.8 30,21.12 37.44,25.68 C38.16,26.04 38.52,27.24 37.92,28.08 M35.04,34.68 C34.56,35.4 33.72,35.64 33,35.16 C27.36,31.68 20.28,30.96 11.88,32.88 C11.04,33.12 10.32,32.52 10.08,31.8 C9.84,30.96 10.44,30.24 11.16,30 C20.28,27.96 28.2,28.8 34.44,32.64 C35.28,33 35.4,33.96 35.04,34.68 M24,0 C10.8,0 0,10.8 0,24 C0,37.2 10.8,48 24,48 C37.2,48 48,37.2 48,24 C48,10.8 37.32,0 24,0" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Example 7: Glitch Hover Effect -->
-                <div class="example-row" data-example="7">
-                    <div class="example-panel example-panel--info">
-                        <h2 class="example-panel__title">7) Glitch hover effect</h2>
-                        <p class="example-panel__description">On hover, duplicated SVG layers create a glitch effect
-                            with horizontal jitter and color offsets.</p>
-                        <ul class="example-panel__list">
-                            <li><strong>Pros:</strong> Eye-catching, trendy effect</li>
-                            <li><strong>Cons:</strong> Complex markup, can be distracting</li>
-                        </ul>
-                    </div>
-                    <div class="example-panel example-panel--code">
-                        <div class="code-tabs">
-                            <button class="code-tab code-tab--active" data-tab="html">HTML</button>
-                            <button class="code-tab" data-tab="css">CSS</button>
-                        </div>
-                        <div class="code-content">
-                            <pre class="code-block code-block--active" data-lang="html"><code>&lt;div class="glitch-container"&gt;
-  &lt;svg class="glitch-logo glitch-logo--main"&gt;...&lt;/svg&gt;
-  &lt;svg class="glitch-logo glitch-logo--r"&gt;...&lt;/svg&gt;
-  &lt;svg class="glitch-logo glitch-logo--g"&gt;...&lt;/svg&gt;
-&lt;/div&gt;</code></pre>
-                            <pre class="code-block" data-lang="css"><code>.glitch-container:hover .glitch-logo--r {
-  animation: glitchR 0.3s infinite;
-  opacity: 0.8;
-}
-@keyframes glitchR {
-  0%, 100% { transform: translate(-2px, 0); }
-  50% { transform: translate(2px, 1px); }
-}</code></pre>
-                        </div>
-                    </div>
-                    <div class="example-panel example-panel--preview">
-                        <div class="preview-container" id="preview-7">
-                            <div class="glitch-container">
-                                <svg class="glitch-logo glitch-logo--main" width="200" height="200" viewBox="0 0 48 48">
-                                    <path fill="#fff"
-                                        d="M38.16,21.36 C30.48,16.8 17.64,16.32 10.32,18.6 C9.12,18.96 7.92,18.24 7.56,17.16 C7.2,15.96 7.92,14.76 9,14.4 C17.52,11.88 31.56,12.36 40.44,17.64 C41.52,18.24 41.88,19.68 41.28,20.76 C40.68,21.6 39.24,21.96 38.16,21.36 M37.92,28.08 C37.32,28.92 36.24,29.28 35.4,28.68 C28.92,24.72 19.08,23.52 11.52,25.92 C10.56,26.16 9.48,25.68 9.24,24.72 C9,23.76 9.48,22.68 10.44,22.44 C19.2,19.8 30,21.12 37.44,25.68 C38.16,26.04 38.52,27.24 37.92,28.08 M35.04,34.68 C34.56,35.4 33.72,35.64 33,35.16 C27.36,31.68 20.28,30.96 11.88,32.88 C11.04,33.12 10.32,32.52 10.08,31.8 C9.84,30.96 10.44,30.24 11.16,30 C20.28,27.96 28.2,28.8 34.44,32.64 C35.28,33 35.4,33.96 35.04,34.68 M24,0 C10.8,0 0,10.8 0,24 C0,37.2 10.8,48 24,48 C37.2,48 48,37.2 48,24 C48,10.8 37.32,0 24,0" />
-                                </svg>
-                                <svg class="glitch-logo glitch-logo--r" width="200" height="200" viewBox="0 0 48 48">
-                                    <path fill="#1ED760"
-                                        d="M38.16,21.36 C30.48,16.8 17.64,16.32 10.32,18.6 C9.12,18.96 7.92,18.24 7.56,17.16 C7.2,15.96 7.92,14.76 9,14.4 C17.52,11.88 31.56,12.36 40.44,17.64 C41.52,18.24 41.88,19.68 41.28,20.76 C40.68,21.6 39.24,21.96 38.16,21.36 M37.92,28.08 C37.32,28.92 36.24,29.28 35.4,28.68 C28.92,24.72 19.08,23.52 11.52,25.92 C10.56,26.16 9.48,25.68 9.24,24.72 C9,23.76 9.48,22.68 10.44,22.44 C19.2,19.8 30,21.12 37.44,25.68 C38.16,26.04 38.52,27.24 37.92,28.08 M35.04,34.68 C34.56,35.4 33.72,35.64 33,35.16 C27.36,31.68 20.28,30.96 11.88,32.88 C11.04,33.12 10.32,32.52 10.08,31.8 C9.84,30.96 10.44,30.24 11.16,30 C20.28,27.96 28.2,28.8 34.44,32.64 C35.28,33 35.4,33.96 35.04,34.68 M24,0 C10.8,0 0,10.8 0,24 C0,37.2 10.8,48 24,48 C37.2,48 48,37.2 48,24 C48,10.8 37.32,0 24,0" />
-                                </svg>
-                                <svg class="glitch-logo glitch-logo--g" width="200" height="200" viewBox="0 0 48 48">
-                                    <path fill="#1DB954"
-                                        d="M38.16,21.36 C30.48,16.8 17.64,16.32 10.32,18.6 C9.12,18.96 7.92,18.24 7.56,17.16 C7.2,15.96 7.92,14.76 9,14.4 C17.52,11.88 31.56,12.36 40.44,17.64 C41.52,18.24 41.88,19.68 41.28,20.76 C40.68,21.6 39.24,21.96 38.16,21.36 M37.92,28.08 C37.32,28.92 36.24,29.28 35.4,28.68 C28.92,24.72 19.08,23.52 11.52,25.92 C10.56,26.16 9.48,25.68 9.24,24.72 C9,23.76 9.48,22.68 10.44,22.44 C19.2,19.8 30,21.12 37.44,25.68 C38.16,26.04 38.52,27.24 37.92,28.08 M35.04,34.68 C34.56,35.4 33.72,35.64 33,35.16 C27.36,31.68 20.28,30.96 11.88,32.88 C11.04,33.12 10.32,32.52 10.08,31.8 C9.84,30.96 10.44,30.24 11.16,30 C20.28,27.96 28.2,28.8 34.44,32.64 C35.28,33 35.4,33.96 35.04,34.68 M24,0 C10.8,0 0,10.8 0,24 C0,37.2 10.8,48 24,48 C37.2,48 48,37.2 48,24 C48,10.8 37.32,0 24,0" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </section>
@@ -409,8 +231,8 @@
         </div>
     </footer>
 
-    <script src="./js/animations.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/canvas.js"></script>
 </body>
 
 </html>

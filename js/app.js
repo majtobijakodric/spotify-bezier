@@ -79,24 +79,16 @@ function initAccordion() {
     });
 }
 
-/**
- * Opens an accordion panel with animation
- */
 function openAccordion(header, content) {
     if (!header || !content) return;
     header.setAttribute('aria-expanded', 'true');
     content.hidden = false;
 
-    // Force a reflow to enable animation
     content.offsetHeight;
 
-    // Set max-height for animation
     content.style.maxHeight = content.scrollHeight + 'px';
 }
 
-/**
- * Closes an accordion panel with animation
- */
 function closeAccordion(header, content) {
     if (!header || !content) return;
     header.setAttribute('aria-expanded', 'false');
@@ -109,9 +101,6 @@ function closeAccordion(header, content) {
     });
 }
 
-// ==========================================================================
-// Search Input Enhancement (guarded for removed elements)
-// ==========================================================================
 const searchInput = document.getElementById('search-input');
 if (searchInput) {
     // Add search functionality placeholder
@@ -120,7 +109,6 @@ if (searchInput) {
             e.preventDefault();
             const query = searchInput.value.trim();
             if (query) {
-                // In a real app, this would trigger a search
                 console.log('Searching for:', query);
             }
         }
