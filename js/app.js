@@ -9,12 +9,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     initCodeTabs();
 });
-
 // ==========================================================================
 // Code Tabs Functionality
 // ==========================================================================
 function initCodeTabs() {
     const exampleRows = document.querySelectorAll('.example-row');
+
+    // Coloris({
+    //     el: '#color-picker',
+    //     parent: '#color-picker-container',
+    //     theme: 'large',
+    //     themeMode: 'dark',
+    //     inline: true,
+    //     defaultColor: '#1ED760',
+    //     formatToggle: true,
+    //     alpha: false,
+    //     closeButton: false,
+    //     clearButton: false,
+    // });
+
+    // // Listen for color changes
+    // document.addEventListener('coloris:pick', event => {
+    //     const color = event.detail.color;
+    //     if (typeof waveColor !== 'undefined') {
+    //         waveColor = color;
+    //         const mainCanvas = document.getElementById('spotify-canvas');
+    //         const ex1 = document.getElementById('example-panel-1');
+    //         const ex2 = document.getElementById('example-panel-2');
+    //         if (mainCanvas && typeof resizeAndDraw === 'function') resizeAndDraw(mainCanvas);
+    //         if (ex1 && typeof drawSpotifyLogo === 'function') drawSpotifyLogo(ex1);
+    //         if (ex2 && typeof drawSpotifyLogo === 'function') drawSpotifyLogo(ex2);
+    //     }
+    // });
 
     exampleRows.forEach(row => {
         const tabs = row.querySelectorAll('.code-tab');
