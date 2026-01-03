@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style/fonts.css">
     <link rel="stylesheet" href="./style/styles.css">
     <link rel="icon" href="//www.scdn.co/i/_global/favicon.png">
+    <link rel="stylesheet" href="./style//coloris.css" />
 </head>
 
 <body>
@@ -117,14 +118,17 @@
                 <!-- 1) Example -->
                 <div class="example-row" data-example="4">
                     <div class="example-panel example-panel--info">
-                        <h2 class="example-panel__title">2)</h2>
-                        <p class="example-panel__description">description</p>
+                        <h2 class="example-panel__title">2) Color picker</h2>
+                        <p class="example-panel__description"> Pick and adjust colors using an always-visible color
+                            picker.
+                            You can change hue, saturation, and brightness, preview the selected color, and copy its
+                            value
+                            in Hex, RGB, or HSL format.</p>
 
 
                     </div>
                     <div class="example-panel example-panel--code">
-                        <label for="color-picker">Choose a color:</label>
-                        <input type="color" id="color-picker" name="color" value="#ff0000">
+                        <div id="color-picker-container"></div>
                     </div>
                     <div class="example-panel example-panel--preview">
                         <div class="preview-container" id="preview-4">
@@ -255,6 +259,7 @@
         </div>
     </footer>
 
+    <script src="js/coloris.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/canvas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
