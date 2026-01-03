@@ -470,6 +470,8 @@ ol {
 /* Code Panel */
 .example-panel--code {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .code-tabs {

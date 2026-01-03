@@ -8,6 +8,22 @@ var colorPicker = document.getElementById("color-picker");
 var spotifyGreen = "#1ED760";
 var spotifyGray = "#191414";
 
+// color changer
+Coloris({
+    el: '#color-picker',
+    parent: '#color-picker-container',
+    theme: 'large',
+    themeMode: 'dark',
+    inline: true,
+    defaultColor: '#1ED760',
+    formatToggle: true,
+    alpha: false,
+    closeButton: false,
+    clearButton: false,
+    onChange: (color, inputEL) => {
+        drawSpotifyLogo(example2, color);
+    }
+});
 
 if (canvas) {
     resizeAndDraw(canvas);
@@ -15,6 +31,7 @@ if (canvas) {
         resizeAndDraw(canvas);
     });
 }
+
 
 
 drawSpotifyLogo(example1, spotifyGreen); // primer 1
@@ -54,6 +71,7 @@ function drawSpotifyLogo(canvas, color) {
     ctx.arc(200, 200, 200, 0, Math.PI * 2);
     ctx.fillStyle = color;
     ctx.fill();
+
     ctx.clip();
 
     // top curve
