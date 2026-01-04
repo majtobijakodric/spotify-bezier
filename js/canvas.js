@@ -8,7 +8,7 @@ var colorPicker = document.getElementById("color-picker");
 var spotifyGreen = "#1ED760";
 var spotifyGray = "#191414";
 
-// color changer
+// color picker
 Coloris({
     el: '#color-picker',
     parent: '#color-picker-container',
@@ -48,7 +48,7 @@ function resizeAndDraw(canvas) {
     var rect = canvas.getBoundingClientRect();
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
-    drawSpotifyLogo(canvas);
+    drawSpotifyLogo(canvas, spotifyGreen);
 }
 
 
