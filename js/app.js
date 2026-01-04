@@ -7,46 +7,105 @@
 // DOM Ready Handler
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Highlight all code blocks on initial load
+    if (typeof Prism !== 'undefined') {
+        Prism.highlightAllUnder(document);
+    }
     initCodeTabs();
+    initComparisonDownloads();
 });
+
+// ==========================================================================
+// Clipboard Copy Utility
+// ==========================================================================
+function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+    }
+    // Fallback for older browsers
+    return new Promise((resolve, reject) => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        textarea.style.top = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        try {
+            const success = document.execCommand('copy');
+            document.body.removeChild(textarea);
+            if (success) {
+                resolve();
+            } else {
+                reject(new Error('execCommand copy failed'));
+            }
+        } catch (err) {
+            document.body.removeChild(textarea);
+            reject(err);
+        }
+    });
+}
+
+// ==========================================================================
+// Comparison Card Downloads
+// ==========================================================================
+function initComparisonDownloads() {
+    const downloadableBoxes = document.querySelectorAll('.comparison-box[data-download]');
+
+    downloadableBoxes.forEach(box => {
+        const triggerDownload = () => {
+            // Ignore if user is selecting text
+            if (window.getSelection().toString().trim()) return;
+
+            const url = box.dataset.download;
+            const filename = box.dataset.filename || '';
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        };
+
+        // Click handler
+        box.addEventListener('click', triggerDownload);
+
+        // Keyboard handler (Enter/Space)
+        box.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                triggerDownload();
+            }
+        });
+    });
+}
+
 // ==========================================================================
 // Code Tabs Functionality
 // ==========================================================================
+// Store timeout IDs per row to prevent overlapping status messages
+const copyStatusTimeouts = new WeakMap();
+
 function initCodeTabs() {
     const exampleRows = document.querySelectorAll('.example-row');
 
-    // Coloris({
-    //     el: '#color-picker',
-    //     parent: '#color-picker-container',
-    //     theme: 'large',
-    //     themeMode: 'dark',
-    //     inline: true,
-    //     defaultColor: '#1ED760',
-    //     formatToggle: true,
-    //     alpha: false,
-    //     closeButton: false,
-    //     clearButton: false,
-    // });
-
-    // // Listen for color changes
-    // document.addEventListener('coloris:pick', event => {
-    //     const color = event.detail.color;
-    //     if (typeof waveColor !== 'undefined') {
-    //         waveColor = color;
-    //         const mainCanvas = document.getElementById('spotify-canvas');
-    //         const ex1 = document.getElementById('example-panel-1');
-    //         const ex2 = document.getElementById('example-panel-2');
-    //         if (mainCanvas && typeof resizeAndDraw === 'function') resizeAndDraw(mainCanvas);
-    //         if (ex1 && typeof drawSpotifyLogo === 'function') drawSpotifyLogo(ex1);
-    //         if (ex2 && typeof drawSpotifyLogo === 'function') drawSpotifyLogo(ex2);
-    //     }
-    // });
-
     exampleRows.forEach(row => {
+        const codeTabs = row.querySelector('.code-tabs');
         const tabs = row.querySelectorAll('.code-tab');
         const codeBlocks = row.querySelectorAll('.code-block');
 
-        if (!tabs.length || !codeBlocks.length) return;
+        if (!tabs.length || !codeBlocks.length || !codeTabs) return;
+
+        // Ensure status span exists in each .code-tabs
+        let statusEl = codeTabs.querySelector('.code-copy-status');
+        if (!statusEl) {
+            statusEl = document.createElement('span');
+            statusEl.className = 'code-copy-status';
+            statusEl.setAttribute('aria-live', 'polite');
+            codeTabs.appendChild(statusEl);
+        }
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -63,10 +122,47 @@ function initCodeTabs() {
                 const targetBlock = row.querySelector(`.code-block[data-lang="${targetLang}"]`);
                 if (targetBlock) {
                     targetBlock.classList.add('code-block--active');
+
+                    // Get the code element inside the block
+                    const codeEl = targetBlock.querySelector('code');
+                    if (codeEl) {
+                        // Trigger syntax highlighting for this code element
+                        if (typeof Prism !== 'undefined') {
+                            Prism.highlightElement(codeEl);
+                        }
+
+                        // Copy the code text to clipboard
+                        const codeText = (codeEl.textContent || codeEl.innerText).trim();
+                        copyToClipboard(codeText).then(() => {
+                            // Show "Copied!" status
+                            showCopyStatus(row, statusEl);
+                        }).catch(() => {
+                            // Silently fail, or could show error message
+                        });
+                    }
                 }
             });
         });
     });
+}
+
+function showCopyStatus(row, statusEl) {
+    // Clear any existing timeout for this row
+    const existingTimeout = copyStatusTimeouts.get(row);
+    if (existingTimeout) {
+        clearTimeout(existingTimeout);
+    }
+
+    // Show the status
+    statusEl.textContent = 'Copied!';
+    statusEl.classList.add('is-visible');
+
+    // Hide after 800ms
+    const timeoutId = setTimeout(() => {
+        statusEl.classList.remove('is-visible');
+    }, 800);
+
+    copyStatusTimeouts.set(row, timeoutId);
 }
 
 // ==========================================================================

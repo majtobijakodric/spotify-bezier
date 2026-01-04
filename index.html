@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./style/styles.css">
     <link rel="icon" href="//www.scdn.co/i/_global/favicon.png">
     <link rel="stylesheet" href="./style//coloris.css" />
+    <!-- Prism.js VS Code Dark+ Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
 </head>
 
 <body>
@@ -59,7 +61,8 @@
 
                 <div class="comparison-row">
                     <!-- PNG -->
-                    <div class="comparison-box">
+                    <div class="comparison-box comparison-box--downloadable" data-download="assets/spotify-png.png"
+                        data-filename="Spotify-PNG.png" role="button" tabindex="0" aria-label="Download Spotify PNG">
                         <span class="comparison-box__label">PNG</span>
                         <div class="comparison-box__content">
                             <img src="assets/spotify-png.png" alt="Spotify Logo" width="200" height="200">
@@ -67,7 +70,8 @@
                     </div>
 
                     <!-- SVG -->
-                    <div class="comparison-box">
+                    <div class="comparison-box comparison-box--downloadable" data-download="assets/spotify-svg.svg"
+                        data-filename="Spotify-SVG.svg" role="button" tabindex="0" aria-label="Download Spotify SVG">
                         <span class="comparison-box__label">SVG</span>
                         <div class="comparison-box__content">
                             <svg width="200" height="200" viewBox="0 0 48 48">
@@ -107,9 +111,9 @@
                             <button class="code-tab" data-tab="js">JavaScript</button>
                         </div>
                         <div class="code-content">
-                            <pre class="code-block code-block--active" data-lang="html"><code>&lt;canvas id="example-panel-1" height="250px" width="250px"&gt;
+                            <pre class="code-block code-block--active" data-lang="html"><code class="language-html">&lt;canvas id="example-panel-1" height="250px" width="250px"&gt;
 &lt;/canvas&gt;</code></pre>
-                            <pre class="code-block" data-lang="js"><code>
+                            <pre class="code-block" data-lang="js"><code class="language-javascript">
 function drawSpotifyLogo(canvas, color) {
     var ctx = canvas.getContext("2d");
 
@@ -231,20 +235,20 @@ function drawSpotifyLogo(canvas, color) {
                         </div>
                         <div class="code-content">
                             <pre class="code-block code-block--active" data-lang="html">
-                                <code>&lt;svg width="250px" height="250px" viewBox="0 0 48 48" version="1.1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                id="spotifySVG"&gt;
-                                &lt;g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"&gt;
-                                    &lt;g id="Color-" transform="translate(-200.000000, -460.000000)" fill="#00DA5A"&gt;
-                                        &lt;path
-                                            d="M238.16,481.36 C230.48,476.8 217.64,476.32 210.32,478.6 C209.12,478.96 207.92,478.24 207.56,477.16 C207.2,475.96 207.92,474.76 209,474.4 C217.52,471.88 231.56,472.36 240.44,477.64 C241.52,478.24 241.88,479.68 241.28,480.76 C240.68,481.6 239.24,481.96 238.16,481.36 M237.92,488.08 C237.32,488.92 236.24,489.28 235.4,488.68 C228.92,484.72 219.08,483.52 211.52,485.92 C210.56,486.16 209.48,485.68 209.24,484.72 C209,483.76 209.48,482.68 210.44,482.44 C219.2,479.8 230,481.12 237.44,485.68 C238.16,486.04 238.52,487.24 237.92,488.08 M235.04,494.68 C234.56,495.4 233.72,495.64 233,495.16 C227.36,491.68 220.28,490.96 211.88,492.88 C211.04,493.12 210.32,492.52 210.08,491.8 C209.84,490.96 210.44,490.24 211.16,490 C220.28,487.96 228.2,488.8 234.44,492.64 C235.28,493 235.4,493.96 235.04,494.68 M224,460 C210.8,460 200,470.8 200,484 C200,497.2 210.8,508 224,508 C237.2,508 248,497.2 248,484 C248,470.8 237.32,460 224,460"
-                                            id="Spotify"&gt;
-                                        &lt;/path&gt;
-                                    &lt;/g&gt;
-                                &lt;/g&gt;
-                            &lt;/svg&gt;</code>
+                                <code class="language-html">
+&lt;svg width="250px" height="250px" viewBox="0 0 48 48" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="spotifySVG"&gt;
+        &lt;g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"&gt;
+            &lt;g id="Color-" transform="translate(-200.000000, -460.000000)" fill="#00DA5A"&gt;
+                &lt;path d="M238.16,481.36 C230.48,476.8 217.64,476.32 210.32,478.6 C209.12,478.96 207.92,478.24 207.56,477.16 C207.2,475.96 207.92,474.76 209,474.4 C217.52,471.88 231.56,472.36 240.44,477.64 C241.52,478.24 241.88,479.68 241.28,480.76 C240.68,481.6 239.24,481.96 238.16,481.36 M237.92,488.08 C237.32,488.92 236.24,489.28 235.4,488.68 C228.92,484.72 219.08,483.52 211.52,485.92 C210.56,486.16 209.48,485.68 209.24,484.72 C209,483.76 209.48,482.68 210.44,482.44 C219.2,479.8 230,481.12 237.44,485.68 C238.16,486.04 238.52,487.24 237.92,488.08 M235.04,494.68 C234.56,495.4 233.72,495.64 233,495.16 C227.36,491.68 220.28,490.96 211.88,492.88 C211.04,493.12 210.32,492.52 210.08,491.8 C209.84,490.96 210.44,490.24 211.16,490 C220.28,487.96 228.2,488.8 234.44,492.64 C235.28,493 235.4,493.96 235.04,494.68 M224,460 C210.8,460 200,470.8 200,484 C200,497.2 210.8,508 224,508 C237.2,508 248,497.2 248,484 C248,470.8 237.32,460 224,460"
+                    id="Spotify"&gt;
+                &lt;/path&gt;
+            &lt;/g&gt;
+        &lt;/g&gt;
+&lt;/svg&gt;</code>
                             </pre>
-                            <pre class="code-block" data-lang="js"><code>
+                            <pre class="code-block" data-lang="js"><code class="language-javascript">
 // Attach SVG.js to the existing inline SVG element
 const draw = SVG('#spotifySVG')
 
@@ -455,6 +459,10 @@ animateDrawUndraw()
     </footer>
 
     <script src="js/coloris.js"></script>
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/canvas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
