@@ -1,4 +1,4 @@
-<h1 align="center">Spotify Bézier</h1>
+<h1 align="center">Spotify Bezier</h1>
 
 <p align="center">
 A Spotify-themed front-end showcase demonstrating PNG vs SVG rendering, canvas drawing of the Spotify logo using manual Bézier curves, an SVG.js stroke-dash "line draw/undraw" animation, and interactive code examples with HTML/JavaScript tabs. PNG and SVG comparison cards are downloadable on click.
