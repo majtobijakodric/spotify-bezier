@@ -602,7 +602,6 @@ input.clr-color:focus {
   box-sizing: border-box;
   border-radius: 8px;
   flex-direction: column;
-  overflow: hidden;
 }
 
 /* Expand the color gradient area to fill available space */
