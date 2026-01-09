@@ -1,6 +1,6 @@
 <h1 align="center">Spotify Bezier</h1>
 
-<p align="center">
+<p align="left">
 A Spotify-themed front-end showcase demonstrating PNG vs SVG rendering, canvas drawing of the Spotify logo using manual Bézier curves, an SVG.js stroke-dash "line draw/undraw" animation, and interactive code examples with HTML/JavaScript tabs. PNG and SVG comparison cards are downloadable on click.
 </p>
 
@@ -90,21 +90,7 @@ spotify-bezier/
    cd spotify-bezier
    ```
 
-2. **Run a local server** (recommended for proper asset loading)
-   ```bash
-   # Using Python
-   python -m http.server 8000
-
-   # Using Node.js
-   npx serve
-
-   # Or use VS Code Live Server extension
-   ```
-
-3. **Open in browser**
-   Navigate to `http://localhost:8000` (or the port shown by your server).
-
-4. **Interact with the showcase**
+2. **Interact with the showcase**
    - Click PNG or SVG cards to download the assets.
    - Switch between HTML and JavaScript tabs in the code panels.
    - Watch the SVG line draw animation loop continuously.
