@@ -383,6 +383,15 @@ ol {
     letter-spacing: 1px;
 }
 
+.comparison-box__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--spacing-md);
+    line-height: 1.5;
+    padding: 0 var(--spacing-sm);
+}
+
 .comparison-box__content {
     flex: 1;
     display: flex;
@@ -431,14 +440,43 @@ ol {
 }
 
 /* ==========================================================================
+   Comparison Section Divider
+   ========================================================================== */
+.comparison-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacing-3xl) 0;
+}
+
+.comparison-divider__title {
+    font-family: var(--font-family-black);
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.comparison-subcopy {
+    margin-top: var(--spacing-sm);
+    text-align: center;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 640px;
+}
+
+.comparison-subcopy p {
+    margin: 0 0 var(--spacing-xs);
+    font-size: var(--font-size-sm);
+}
+
+/* ==========================================================================
    Split-View Slider: Raster vs Vector Comparison
    ========================================================================== */
 .split-view-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
-    gap: var(--spacing-xl);
+    align-items: center;
     margin-bottom: var(--spacing-2xl);
 }
 
@@ -452,6 +490,11 @@ ol {
     overflow: hidden;
     border: 2px solid var(--color-border-light);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Hide any legacy inline descriptions near the split view */
+.split-view-description {
+    display: none;
 }
 
 /* Container for each side */
