@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initCodeTabs();
     initComparisonDownloads();
+    initSplitViewSlider();
 });
 
 // ==========================================================================
@@ -80,6 +81,80 @@ function initComparisonDownloads() {
             }
         });
     });
+}
+
+// ==========================================================================
+// Split-View Slider: Raster vs Vector Comparison
+// ==========================================================================
+function initSplitViewSlider() {
+    const wrapper = document.querySelector('.split-view-wrapper');
+    const slider = document.querySelector('.split-view-slider');
+
+    if (!wrapper || !slider) return;
+
+    let isDragging = false;
+
+    // Set slider position and update clip-path
+    const setSliderPosition = (x) => {
+        const rect = wrapper.getBoundingClientRect();
+        let position = ((x - rect.left) / rect.width) * 100;
+
+        // Clamp position between 0 and 100
+        position = Math.max(0, Math.min(100, position));
+
+        // Update CSS variable for clip-path and slider position
+        wrapper.style.setProperty('--slider-position', position + '%');
+    };
+
+    // Mouse down - start dragging
+    slider.addEventListener('mousedown', () => {
+        isDragging = true;
+        slider.classList.add('is-dragging');
+        document.body.style.userSelect = 'none';
+        document.body.style.cursor = 'col-resize';
+    });
+
+    // Mouse move - update slider position
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        setSliderPosition(e.clientX);
+    });
+
+    // Mouse up - stop dragging
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            slider.classList.remove('is-dragging');
+            document.body.style.userSelect = '';
+            document.body.style.cursor = '';
+        }
+    });
+
+    // Click on wrapper to move slider to mouse position
+    wrapper.addEventListener('click', (e) => {
+        if (e.target === slider || e.target.closest('.split-view-slider')) return;
+        setSliderPosition(e.clientX);
+    });
+
+    // Keyboard support for slider (arrow keys when focused)
+    slider.addEventListener('keydown', (e) => {
+        const currentPosition = parseFloat(wrapper.style.getPropertyValue('--slider-position') || '50');
+        let newPosition = currentPosition;
+        const step = 2; // Percentage step per arrow key press
+
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            newPosition = Math.max(0, currentPosition - step);
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            newPosition = Math.min(100, currentPosition + step);
+        }
+
+        wrapper.style.setProperty('--slider-position', newPosition + '%');
+    });
+
+    // Initialize slider at 50%
+    wrapper.style.setProperty('--slider-position', '50%');
 }
 
 // ==========================================================================
