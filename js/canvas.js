@@ -63,17 +63,16 @@ function drawSpotifyLogo(canvas, color) {
     var offsetX = (canvas.width - designSize * scale) / 2;
     var offsetY = (canvas.height - designSize * scale) / 2;
 
-
     ctx.save();
     ctx.translate(offsetX, offsetY);
     ctx.scale(scale, scale);
 
     // Clip to the green circle in design coordinates
-    ctx.beginPath();
     
     var cx = designSize / 2;
     var cy = designSize / 2;
     var r = designSize / 2;
+
     // Magic constant for circle approximation
     const k = 0.5522847498307936; // ≈ 4*(√2-1)/3
 

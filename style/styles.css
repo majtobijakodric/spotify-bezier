@@ -457,6 +457,15 @@ ol {
     text-align: center;
 }
 
+.comparison-divider__description {
+    margin-top: 50px;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    max-width: 640px;
+}
+
 .comparison-subcopy {
     margin-top: var(--spacing-sm);
     text-align: center;
